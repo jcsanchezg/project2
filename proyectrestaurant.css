@@ -1,0 +1,160 @@
+.wrapper {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+}
+.box {
+    border: 1px solid transparent;
+    border-radius:16px;
+    display:flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 5px;
+}
+.top {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    justify-content: space-between;
+    font-size: 19px;
+    text-decoration: none;
+    color: #fff;
+    margin: 1px 1px 1px 1px;
+    padding: 0px;
+    /* background: linear-gradient(180deg, #6fb4fd 0%, #5caafc 100%); */
+}
+/* navbarsection */
+.menubar {
+    font-size: 20px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content:space-evenly; */
+    /* padding: 1.1rem 5rem; */
+    /* background: linear-gradient(180deg, #6fb4fd 0%, #5caafc 100%); */
+}
+.navbar{
+    align-items:end;
+}
+.navbaritems{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1px 1px 1px 1px;
+    margin: 1px 10px;
+    /* flex-direction: row; */
+}
+.menulist{
+    list-style-type: none;
+    margin-left: 15px;
+    }
+.menulist > a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.menulist::after{
+    content: '';
+    width:0rem;
+    height:0.15rem;
+    background-color: #fff;
+    display:block;
+    border-radius: 0.2rem;
+    margin:0.2rem auto 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+.menulist:hover:after{
+    width:2rem;
+}
+
+.picturefood {
+    grid-column: 2;
+    grid-row:2 / 5;
+    background-color: green;
+    background-image: url("/images/breastwithcheese.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+.buttons {
+    grid-column: 1;
+    grid-row: 2 / 5;
+    align-items: center;
+}
+.colorbuttonmenu {
+    border-radius: 16px;
+    display: inline-block;
+    font-size: 25px;
+    color: linear-gradient(to right, #DECBA4, #3E5151);;
+    width: 200px;
+    margin: 10px;
+}
+.descriptionmenu {
+    grid-column:3;
+    grid-row:2 / 5;
+    align-items: center;
+}
+.fotter {
+    grid-column:1 / 4;
+    grid-row: 5;
+    background-image: url('/images/restauranttittle.jpg');
+    background-size: contain;
+    background-repeat: repeat-x;
+    justify-content: flex-end;
+    
+}
+.foter {
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 12px;
+    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+}
+@media screen and (max-width: 640px) {
+    .wrapper { background-image: linear-gradient(to right, #8360c3, #2ebf91);}
+    .box {
+        border: 1px solid transparent;
+        border-radius:16px;
+        /* background-color: lightblue; */
+        display:flexbox;
+        font-size: 10px;
+        /* justify-content: center; */
+        /* align-items: center; */
+        margin: 3px;
+    }
+    .buttons {
+        display:flex;
+        flex-direction: column;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        font-size:15px;
+    } 
+    .colorbuttonmenu {
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        font-size: 15px;
+        color: black;
+        width: 300px;
+        margin: 10px;
+    }
+    .picturefood {
+        grid-column: 1 / 4;
+        grid-row:3;
+        background-size: 30%;
+    }
+    .descriptionmenu {
+        grid-column: 1 / 4;
+        grid-row:4;
+        align-items: center;
+    }
+    .fotter {
+        grid-column:1 / 4;
+        grid-row: 5;
+    }
+    .foter {
+        flex-direction: column;
+        justify-content: flex-end;
+        margin: -20px;
+        background-color: beige;
+    }
+    
+}
