@@ -11,10 +11,10 @@ console.log(list);
 let tableList = JSON.parse(localStorage.getItem('table'));
 let items= tableList.map((event,index) =>{
     return `<li>${event.name}
-            <button onclick='deleteUser(${index})'>Delete</button>
+            <button onclick='deleteUser(${index})'>Eliminar Mesa</button>
+            <button onclick='updateTable(${index})'>Ediar Mesa</button>
             </li>`
 });
-// TODO check why is not returnig on the list
 list.innerHTML = items.join(' ');
 document.body.appendChild(list);
 // this function create a new table on the json list
@@ -27,12 +27,17 @@ function newTable(){
     fillTable();
     
 }
+function updateTable(index){
+    let dataTable = JSON.parse(localStorage.getItem('table'))
+    // console.log(updateTable);
+    const currentIndex= dataTable.findIndex((id)=>{
+      return id.index == index;
+    });
+    console.log(index);
+}
 function deleteUser(index){
-    // let inputName = document.getElementById('inputName').value;
-    // console.log('user to delete: '+inputName);
     let user2delete = JSON.parse(localStorage.getItem('table'));
     // console.log('los usuarios son: '+user2delete);
-    // user2delete.substring(inputName);
     // console.log('los que quedaron son: '+user2delete);
     user2delete.splice(index,1)
     localStorage.setItem('table',JSON.stringify(user2delete)); 
@@ -51,7 +56,8 @@ function getNextId(storage) {
     let tableList = JSON.parse(localStorage.getItem('table'));
     let items= tableList.map((event,index) =>{
     return `<li>${event.name}
-            <button onclick='deleteUser(${index})'>Delete</button>
+            <button onclick='deleteUser(${index})'>Eliminar Mesa</button>
+            <button onclick='updateTable(${index})'>Editar Mesa</button>
             </li>`
     });
     list.innerHTML = items.join(' ');
