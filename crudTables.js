@@ -15,6 +15,8 @@ let items= tableList.map((event,index) =>{
             <button onclick='updateTable(${index})'>Ediar Mesa</button>
             </li>`
 });
+//set this variable to get the id when update a table name
+let tableID = '0';
 list.innerHTML = items.join(' ');
 document.body.appendChild(list);
 // this function create a new table on the json list
@@ -28,17 +30,24 @@ function newTable(){
     
 }
 function updateTable(index){
-    let dataTable = JSON.parse(localStorage.getItem('table'))
-    // console.log(updateTable);
-    const currentIndex= dataTable.findIndex((id)=>{
-      return id.index == index;
-    });
-    console.log(index);
+    const dataTable = JSON.parse(localStorage.getItem('table'));
+    console.log('index: ',index);
+    document.getElementById('inputName').value = dataTable[index].name
+    tableID=index;
+    
 }
+function updateName(){
+  console.log('processing '+tableID);
+  let inputName=document.getElementById('inputName').value;
+  let savedTable= JSON.parse(localStorage.getItem('table'));
+  savedTable[tableID].name = inputName;
+  localStorage.setItem('table',JSON.stringify(savedTable));
+  document.getElementById('inputName').value = '';
+  fillTable();
+}
+
 function deleteUser(index){
     let user2delete = JSON.parse(localStorage.getItem('table'));
-    // console.log('los usuarios son: '+user2delete);
-    // console.log('los que quedaron son: '+user2delete);
     user2delete.splice(index,1)
     localStorage.setItem('table',JSON.stringify(user2delete)); 
     fillTable();

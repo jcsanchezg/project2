@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="proyectRestaurant.css" />
     <title>Administrar Mesas - Restaurante Parador Caballista</title>
 </head>
 <body>
-    <main class="registerTable">
-        <header class="box top">
-            <a href="/index.html">Regresar</a>
-        </header>
+    <header class="foter">
+        <a href="/index.html">Regresar</a>
+    </header>
+    <main class="register-table">
         <h1>Control Mesas</h1>
-        <input id="inputName" type="text" />
-        <button id="btn1" onclick="newTable()">Crear Mesa</button>
-        <button id="btn2" onclick="modifyUser()">Modificar Mesa</button>
-        <ul id="list"></ul>        
+        <div class="form">
+        <input id="inputName" type="text" placeholder="Nombre de la mesa" />
+        <button id="btn-create" onclick="newTable()">Iniciar Servicio para Mesa</button>
+        <button onclick="updateName()">Modificar Mesa</button>
+        </div>
+        <ul id="list" ></ul>
     </main>
+    
     <script src="crudTables.js" type="text/javascript"></script>
 </body>
 </html>

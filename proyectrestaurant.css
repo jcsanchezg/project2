@@ -2,6 +2,7 @@
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-auto-rows: minmax(100px, auto);
+    border-radius:16px;
     background-image: linear-gradient(to right, #DECBA4, #3E5151);
 }
 .box {
@@ -21,7 +22,7 @@
     color: #fff;
     margin: 1px 1px 1px 1px;
     padding: 0px;
-    /* background: linear-gradient(180deg, #6fb4fd 0%, #5caafc 100%); */
+    background: linear-gradient(to right, #DECBA4, #3E5151);
 }
 /* navbarsection */
 .menubar {
@@ -103,11 +104,74 @@
     
 }
 .foter {
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: flex-end;
-    font-size: 12px;
+    font-size: 20px;
+    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+    padding-left: 3rem;
+    padding-top: 1rem;
+}
+
+.register-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
     background-image: linear-gradient(to right, #DECBA4, #3E5151);
 }
+
+.register-table h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form input[type="text"] {
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    width: 100%;
+    max-width: 20rem;
+}
+
+.form button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #3e8e41;
+}
+
+.ulista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 50rem;
+    align-items: left;
+}
+.lista {
+    margin-bottom: 0.5rem;
+    background-color: #f2f2f2;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: large;
+    }
+
+
 @media screen and (max-width: 640px) {
     .wrapper { background-image: linear-gradient(to right, #8360c3, #2ebf91);}
     .box {
